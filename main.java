@@ -11,6 +11,8 @@ public class main {
 		NewsAgency cp = new NewsAgency("Canadian Press", ow);
 		NewsAgency ap = new NewsAgency("American Press", ow);
 
+		System.out.println();
+
 		TF1 tf1 = new TF1(new ArrayList<> (Arrays.asList(reuters)));
 		CBC cbc = new CBC(new ArrayList<> (Arrays.asList(reuters, cp, ap)));
 		CBS cbs = new CBS(new ArrayList<> (Arrays.asList(ap)));
