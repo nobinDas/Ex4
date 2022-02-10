@@ -5,9 +5,9 @@ public class CBS implements Channel{
 
     public CBS(ArrayList<Observer> newsAgencies) {
         agencies = newsAgencies;
-//        for(Observer agency: agencies){
-//            agency.registerChannel(this);
-//        }
+        for(Observer agency: agencies){
+            agency.registerChannel(this);
+        }
     }
     public void update(NewsItem n){
         for(Observer agency: agencies){
@@ -16,6 +16,8 @@ public class CBS implements Channel{
     }
 
     public void display(NewsItem n) {
-        System.out.println("CBC reports: "+n.toString());
+        if(n.country == "US") {
+            System.out.println("CBS reports: "+n.toString());
+        }
     }
 }

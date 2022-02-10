@@ -9,18 +9,19 @@ public class NewsAgency implements Observer{
     public NewsAgency(String agency, Subject ow){
         this.ow = ow;
         this.agency = agency;
+        channels = new ArrayList<Channel>();
         ow.registerObserver(this);
     }
 
-//    public void registerChannel(Channel c){
-//        channels.add(c);
-//    }
+    public void registerChannel(Channel c){
+        channels.add(c);
+    }
 
     public void update(NewsItem n){
         this.nsItem = n;
-//        for (Channel channel : channels) {
-//            channel.update(n);
-//        }
+        for (Channel channel : channels) {
+            channel.update(n);
+        }
     }
 
 }
